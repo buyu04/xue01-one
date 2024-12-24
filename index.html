@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: rgba(250, 230, 175, 0.432);
+      }
+      .flex {
+        display: flex;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg5 {
+        margin: 5px;
+      }
+      .mgt5 {
+        margin-top: 5px;
+      }
+      .mgr5 {
+        margin-right: 5px;
+      }
+      .mgl5 {
+        margin-left: 5px;
+      }
+      .lanSe {
+        background-color: rgba(156, 156, 255, 0.801);
+      }
+      .baiSe {
+        background-color: aliceblue;
+      }
+      .yinYing {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+      .kaiTi {
+        padding: 10px 20px;
+        border-bottom: 1px solid grey;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+        font-family: "楷体", "KaiTi", "STKaiti", sans-serif;
+      }
+      .xiaoXi {
+        padding: 10px 20px;
+        border-bottom: 1px solid grey;
+        font-size: 20px;
+        color: #666;
+      }
+      img.responsive {
+        width: 5vw;
+        height: auto;
+      }
+      .gongNengQu {
+        width: 40px;
+      }
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .xianShi {
+          flex-direction: column;
+        }
+        .gongNeng {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!--左侧-->
+    <div style="width: 15vw" class="yinYing lanSe mg5 ceBian">
+      <!--头像栏-->
+      <div
+        style="padding: 10px; align-items: center; justify-content: center"
+        class="mgl5 kaiTi"
+      >
+        <img src="buYu.jpg" alt="logo" class="responsive" />
+        <div style="margin-left: 10px">不语</div>
+      </div>
+      <!--消息栏-->
+      <div class="flex1">
+        <div style="height: 50px" class="baiSe mgt5 yinYing">消息</div>
+        <div style="height: 50px" class="baiSe mgt5 yinYing">消息</div>
+        <div style="height: 50px" class="baiSe mgt5 yinYing">消息</div>
+        <div style="height: 50px" class="baiSe mgt5 yinYing">消息</div>
+      </div>
+    </div>
+    <!--显示区域-->
+    <div class="flex flex1 column xianShi">
+      <!--顶栏-->
+      <div
+        style="height: 40px; width: 72vw"
+        class="lanSe mgt5 mgr5 mgl5 yinYing"
+      ></div>
+      <!--显示屏-->
+      <div style="width: 72vw; height: 600px" class="baiSe mg5"></div>
+    </div>
+    <!--右侧-->
+    <div style="flex: 1" class="gongNeng flex column mg5 lanSe">
+      <!--功能块-->
+      <div class="flex">
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+      </div>
+      <div class="flex">
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+      </div>
+      <div class="flex">
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+      </div>
+      <div class="flex">
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+      </div>
+    </div>
+  </body>
+</html>
