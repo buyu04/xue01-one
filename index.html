@@ -1,76 +1,76 @@
 <!DOCTYPE html>
-< html lang = "zh-CN" >
-  <头>
-    <元字符集= “UTF-8”  />
-    < meta http-equiv = "X-UA-Compatible"  content = "IE=edge"  />
-    <元名称= “视口” 内容= “宽度=设备宽度，初始比例=1.0”  />
-    <标题>文档</标题>
-    <风格>
-      身体{
-        保证金：0；
-        高度：100 vh；
-        背景颜色：rgba （250、230、175、0.432 ）；​​​​​
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: rgba(250, 230, 175, 0.432);
       }
       .flex {
-        显示：柔性；
+        display: flex;
       }
       .flex1 {
-        弹性：1；
+        flex: 1;
       }
-      。柱子{
-        弯曲方向：列；
+      .column {
+        flex-direction: column;
       }
       .mg5 {
-        边距：5像素；
+        margin: 5px;
       }
       .mgt5 {
-        顶部边距：5 px；
+        margin-top: 5px;
       }
       .mgr5 {
-        右边距：5 px；
+        margin-right: 5px;
       }
       .mgl5 {
-        左边距：5 px；
+        margin-left: 5px;
       }
       .lanSe {
-        背景颜色：rgba （156、156、255、0.801 ）；​​​​​
+        background-color: rgba(156, 156, 255, 0.801);
       }
       .baiSe {
-        背景颜色：aliceblue；
+        background-color: aliceblue;
       }
       .yinYing {
-        框阴影：rgb ( 0  0  0 / 20 % )  0 px  2 px  1 px  -1 px ,
-          RGB ( 0  0  0 / 14 % )  0像素 1像素 1像素 0像素, RGB ( 0  0  0 / 12 % )  0像素 1像素 3像素 0像素;
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
       }
       .kaiTi {
-        内边距：10像素 20像素；
-        边框底部：1 px 纯 灰色；
-        字体大小：30像素；
-        颜色：rgb ( 0,0,0 ) ;​​​​
-        font-family : "楷体" , "KaiTi" , "STKaiti" , sans-serif ;
+        padding: 10px 20px;
+        border-bottom: 1px solid grey;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+        font-family: "楷体", "KaiTi", "STKaiti", sans-serif;
       }
-      .小曦{
-        内边距：10像素 20像素；
-        边框底部：1 px 纯 灰色；
-        字体大小：20像素；
-        颜色：#666；
+      .xiaoXi {
+        padding: 10px 20px;
+        border-bottom: 1px solid grey;
+        font-size: 20px;
+        color: #666;
       }
-      img.响应式{
-        宽度：5大众；
-        高度：自动；
+      img.responsive {
+        width: 5vw;
+        height: auto;
       }
       .gongNengQu {
-        宽度：40像素；
+        width: 40px;
       }
-      @media  （最大宽度：600 px ） {
+      @media (max-width: 600px) {
         .ceBian {
-          显示：无；
+          display: none;
         }
-        .贤士{
-          弯曲方向：列；
+        .xianShi {
+          flex-direction: column;
         }
         .gongNeng {
-          弯曲方向：列；
+          flex-direction: column;
         }
       }
     </style>
@@ -89,7 +89,7 @@
       <!--消息栏-->
       <div class="flex1">
         <div style="height: 50px" class="baiSe mgt5 yinYing">签名</div>
-        <div style="height: 50px" class="baiSe mgt5 yinYing">图片</div>
+        <div style="height: 50px" class="baiSe mgt5 yinYing">我的图片</div>
         <div style="height: 50px" class="baiSe mgt5 yinYing">个人资料</div>
         <div style="height: 50px" class="baiSe mgt5 yinYing">消息</div>
       </div>
@@ -102,7 +102,7 @@
         class="lanSe mgt5 mgr5 mgl5 yinYing"
       ></div>
       <!--显示屏-->
-      <div style="width: 72vw; height: 600px" class="baiSe mg5">主页正在加载...</div>
+      <div style="width: 72vw; height: 600px" class="baiSe mg5"></div>
     </div>
     <!--右侧-->
     <div style="flex: 1" class="gongNeng flex column mg5 lanSe">
