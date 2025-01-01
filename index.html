@@ -4,12 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>page</title>
+    <title>buYu</title>
     <style>
-      body {
+      body,
+      html {
+        height: 100%;
         margin: 0;
-        height: 100vh;
-        background-color: rgba(250, 230, 175, 0.432);
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .video-background {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        z-index: -100;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
       }
       .flex {
         display: flex;
@@ -33,10 +47,10 @@
         margin-left: 5px;
       }
       .lanSe {
-        background-color: rgba(156, 156, 255, 0.801);
+        background-color: rgb(156, 156, 255);
       }
       .baiSe {
-        background-color: aliceblue;
+        background-color: rgba(240, 248, 255, 0.5);
       }
       .yinYing {
         box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
@@ -76,8 +90,13 @@
     </style>
   </head>
   <body class="flex">
+    <!--背景设置-->
+    <video autoplay loop id="myVideo" class="video-background">
+      <source src="beiJing .mp4" type="video/mp4" />
+      您的浏览器不支持视频背景。
+    </video>
     <!--左侧-->
-    <div style="width: 15vw" class="yinYing lanSe mg5 ceBian">
+    <div style="width: 15vw" class="yinYing lanSe mg5">
       <!--头像栏-->
       <div
         style="padding: 10px; align-items: center; justify-content: center"
@@ -95,7 +114,7 @@
       </div>
     </div>
     <!--显示区域-->
-    <div class="flex flex1 column xianShi">
+    <div class="flex flex1 column">
       <!--顶栏-->
       <div
         style="height: 40px; width: 72vw"
@@ -105,7 +124,7 @@
       <div style="width: 72vw; height: 600px" class="baiSe mg5"></div>
     </div>
     <!--右侧-->
-    <div style="flex: 1" class="gongNeng flex column mg5 lanSe">
+    <div style="flex: 1" class="flex column mg5 lanSe">
       <!--功能块-->
       <div class="flex">
         <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
