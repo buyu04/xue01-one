@@ -13,12 +13,14 @@
         padding: 0;
         overflow: hidden;
       }
-
+      /*视频背景*/
       .video-background {
         position: fixed;
         right: 0;
         bottom: 0;
-        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
         height: auto;
         z-index: -100;
         background-size: cover;
@@ -50,12 +52,18 @@
         background-color: rgb(156, 156, 255);
       }
       .baiSe {
-        background-color: rgba(240, 248, 255, 0.5);
+        background-color: rgba(
+          240,
+          248,
+          255,
+          0.5
+        ); /*不透明度调整，使背景视频不被完全覆盖*/
       }
       .yinYing {
         box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
           rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
       }
+      /*字体*/
       .kaiTi {
         padding: 10px 20px;
         border-bottom: 1px solid grey;
@@ -69,30 +77,51 @@
         font-size: 20px;
         color: #666;
       }
-      img.responsive {
+      .responsive {
         width: 5vw;
         height: auto;
       }
       .gongNengQu {
         width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer; /*鼠标手势*/
       }
-      @media (max-width: 600px) {
-        .ceBian {
-          display: none;
-        }
-        .xianShi {
-          flex-direction: column;
-        }
-        .gongNeng {
-          flex-direction: column;
-        }
+      /*显示区域顶栏和显示屏水平排列*/
+      .display-area {
+        display: flex;
+        flex-direction: column;
+      }
+      /*功能块链接设置*/
+      /*去除下划线*/
+      a.no-underline {
+        text-decoration: none;
+      }
+      /*设置链接默认颜色*/
+      a:link {
+        color: black; /*未访问的链接颜色*/
+      }
+      a:hover {
+        color: blue; /*鼠标悬停时的链接颜色*/
+      }
+      a:active {
+        color: aqua; /*点击时的链接颜色*/
+      }
+      a:visited {
+        color: brown; /*已访问过的链接颜色*/
+      }
+      /*功能块字体*/
+      .ZiTi {
+        font-size: 30px;
+        font-family: "楷体", "KaiTi", "STKaiti", sans-serif;
       }
     </style>
   </head>
   <body class="flex">
     <!--背景设置-->
     <video autoplay loop id="myVideo" class="video-background">
-      <source src="beiJing .mp4" type="video/mp4" />
+      <source src="beiJing.mp4" type="video/mp4" />
       您的浏览器不支持视频背景。
     </video>
     <!--左侧-->
@@ -114,7 +143,7 @@
       </div>
     </div>
     <!--显示区域-->
-    <div class="flex flex1 column">
+    <div class="display-area">
       <!--顶栏-->
       <div
         style="height: 40px; width: 72vw"
@@ -127,24 +156,96 @@
     <div style="flex: 1" class="flex column mg5 lanSe">
       <!--功能块-->
       <div class="flex">
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/zishu/?_app=onebox"
+            class="ZiTi no-underline"
+            >子</a
+          >
+        </div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/chouniu/?_app=onebox"
+            class="ZiTi no-underline"
+            >丑</a
+          >
+        </div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/yinhu/?_app=onebox"
+            class="ZiTi no-underline"
+            >寅</a
+          >
+        </div>
       </div>
       <div class="flex">
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/maotu/?_app=onebox"
+            class="ZiTi no-underline"
+            >卯</a
+          >
+        </div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/chenlong/?_app=onebox"
+            class="ZiTi no-underline"
+            >辰</a
+          >
+        </div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/sishe/?_app=onebox"
+            class="ZiTi no-underline"
+            >巳</a
+          >
+        </div>
       </div>
       <div class="flex">
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/wuma/?_app=onebox"
+            class="ZiTi no-underline"
+            >午</a
+          >
+        </div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/weiyang/?_app=onebox"
+            class="ZiTi no-underline"
+            >未</a
+          >
+        </div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/shenhou/?_app=onebox"
+            class="ZiTi no-underline"
+            >申</a
+          >
+        </div>
       </div>
       <div class="flex">
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5"></div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/youji/?_app=onebox"
+            class="ZiTi no-underline"
+            >酉</a
+          >
+        </div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/xugou/?_app=onebox"
+            class="ZiTi no-underline"
+            >戌</a
+          >
+        </div>
+        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
+          <a
+            href="https://www.xzw.com/shengxiao/haizhu/?_app=onebox"
+            class="ZiTi no-underline"
+            >亥</a
+          >
+        </div>
       </div>
     </div>
   </body>
