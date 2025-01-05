@@ -26,6 +26,10 @@
         z-index: -100;
         object-fit: cover;
       }
+      .wenBen{
+        position: relative;
+        z-index: 1;
+      }
       .flex {
         display: flex;
       }
@@ -129,7 +133,7 @@
       您的浏览器不支持视频背景。
     </video>
     <!--左侧-->
-    <div style="width: 15vw" class="yinYing lanSe mg5 zuoCe">
+    <div style="width: 15vw" class="yinYing lanSe mg5 wenBen zuoCe">
       <!--头像栏-->
       <div
         style="padding: 10px; align-items: center; justify-content: center"
@@ -147,7 +151,7 @@
       </div>
     </div>
     <!--显示区域-->
-    <div class="display-area">
+    <div class="display-area wenBen">
       <!--顶栏-->
       <div
         style="width: 72vw; height: 50px"
@@ -157,7 +161,7 @@
       <div class="baiSe mg5 flex1"></div>
     </div>
     <!--右侧-->
-    <div style="flex: 1" class="flex column mg5 lanSe">
+    <div style="flex: 1" class="flex column mg5 lanSe wenBen">
       <!--功能块-->
       <div class="flex">
         <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
