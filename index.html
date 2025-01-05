@@ -26,7 +26,7 @@
         z-index: -100;
         object-fit: cover;
       }
-      .wenBen{
+      .wenBen {
         position: relative;
         z-index: 1;
       }
@@ -123,12 +123,18 @@
         .zuoCe {
           display: none;
         }
+        .zhuTi {
+          display: block;
+        }
+        .youCe {
+          flex-direction: column;
+        }
       }
     </style>
   </head>
   <body class="flex">
     <!--背景设置-->
-    <video autoplay loop id="myVideo" class="video-background">
+    <video autoplay muted loop class="video-background">
       <source src="beiJing.mp4" type="video/mp4" />
       您的浏览器不支持视频背景。
     </video>
@@ -151,7 +157,7 @@
       </div>
     </div>
     <!--显示区域-->
-    <div class="display-area wenBen">
+    <div class="display-area wenBen zhuTi">
       <!--顶栏-->
       <div
         style="width: 72vw; height: 50px"
@@ -161,9 +167,9 @@
       <div class="baiSe mg5 flex1"></div>
     </div>
     <!--右侧-->
-    <div style="flex: 1" class="flex column mg5 lanSe wenBen">
+    <div style="flex: 1" class="flex column mg5 lanSe wenBen zhuTi">
       <!--功能块-->
-      <div class="flex">
+      <div class="flex youCe">
         <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
           <a
             href="https://www.xzw.com/shengxiao/zishu/?_app=onebox"
@@ -186,7 +192,7 @@
           >
         </div>
       </div>
-      <div class="flex">
+      <div class="flex youCe">
         <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
           <a
             href="https://www.xzw.com/shengxiao/maotu/?_app=onebox"
@@ -209,7 +215,7 @@
           >
         </div>
       </div>
-      <div class="flex">
+      <div class="flex youCe">
         <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
           <a
             href="https://www.xzw.com/shengxiao/wuma/?_app=onebox"
@@ -232,7 +238,7 @@
           >
         </div>
       </div>
-      <div class="flex">
+      <div class="flex youCe">
         <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
           <a
             href="https://www.xzw.com/shengxiao/youji/?_app=onebox"
