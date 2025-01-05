@@ -16,16 +16,15 @@
       /*视频背景*/
       .video-background {
         position: fixed;
-        right: 0;
-        bottom: 0;
+        top: 50%;
+        left: 50%;
         min-width: 100%;
         min-height: 100%;
         width: auto;
         height: auto;
+        transform: translate(-50%, -50%);
         z-index: -100;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+        object-fit: cover;
       }
       .flex {
         display: flex;
@@ -109,12 +108,17 @@
         color: aqua; /*点击时的链接颜色*/
       }
       a:visited {
-        color: brown; /*已访问过的链接颜色*/
+        color: black; /*已访问过的链接颜色*/
       }
       /*功能块字体*/
       .ZiTi {
         font-size: 30px;
         font-family: "楷体", "KaiTi", "STKaiti", sans-serif;
+      }
+      @media (max-width: 600px) {
+        .zuoCe {
+          display: none;
+        }
       }
     </style>
   </head>
@@ -125,7 +129,7 @@
       您的浏览器不支持视频背景。
     </video>
     <!--左侧-->
-    <div style="width: 15vw" class="yinYing lanSe mg5">
+    <div style="width: 15vw" class="yinYing lanSe mg5 zuoCe">
       <!--头像栏-->
       <div
         style="padding: 10px; align-items: center; justify-content: center"
@@ -146,11 +150,11 @@
     <div class="display-area">
       <!--顶栏-->
       <div
-        style="height: 40px; width: 72vw"
+        style="width: 72vw; height: 50px"
         class="lanSe mgt5 mgr5 mgl5 yinYing"
       ></div>
       <!--显示屏-->
-      <div style="width: 72vw; height: 600px" class="baiSe mg5"></div>
+      <div class="baiSe mg5 flex1"></div>
     </div>
     <!--右侧-->
     <div style="flex: 1" class="flex column mg5 lanSe">
