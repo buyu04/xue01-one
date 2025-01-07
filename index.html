@@ -4,263 +4,116 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>buYu</title>
+    <title>Main Page</title>
     <style>
-      body,
-      html {
-        height: 100%;
-        margin: 0;
+      * {
         padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        top: 0;
+      }
+      header {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+      }
+      .touXiang {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
         overflow: hidden;
       }
-      /*视频背景*/
-      .video-background {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translate(-50%, -50%);
-        z-index: -100;
-        object-fit: cover;
-      }
-      .wenBen {
-        position: relative;
-        z-index: 1;
-      }
-      .flex {
-        display: flex;
-      }
-      .flex1 {
-        flex: 1;
-      }
-      .column {
-        flex-direction: column;
-      }
-      .mg5 {
-        margin: 5px;
-      }
-      .mgt5 {
-        margin-top: 5px;
-      }
-      .mgr5 {
-        margin-right: 5px;
-      }
-      .mgl5 {
-        margin-left: 5px;
-      }
-      .lanSe {
-        background-color: rgb(156, 156, 255);
-      }
-      .baiSe {
-        background-color: rgba(
-          240,
-          248,
-          255,
-          0.5
-        ); /*不透明度调整，使背景视频不被完全覆盖*/
-      }
-      .yinYing {
-        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-      }
-      /*字体*/
-      .kaiTi {
-        padding: 10px 20px;
-        border-bottom: 1px solid grey;
+      header p {
         font-size: 30px;
         color: rgb(0, 0, 0);
         font-family: "楷体", "KaiTi", "STKaiti", sans-serif;
       }
-      .xiaoXi {
-        padding: 10px 20px;
-        border-bottom: 1px solid grey;
+      .anNiu {
+        width: 100px;
+        height: 40px;
         font-size: 20px;
-        color: #666;
+        background-color: rgb(36, 36, 133);
       }
-      .responsive {
-        width: 5vw;
-        height: auto;
-      }
-      .gongNengQu {
-        width: 40px;
+      article {
+        background: #00000073;
+        color: #fff;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding-top: 50px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer; /*鼠标手势*/
       }
-      /*显示区域顶栏和显示屏水平排列*/
-      .display-area {
-        display: flex;
-        flex-direction: column;
-      }
-      /*功能块链接设置*/
-      /*去除下划线*/
-      a.no-underline {
-        text-decoration: none;
-      }
-      /*设置链接默认颜色*/
-      a:link {
-        color: black; /*未访问的链接颜色*/
-      }
-      a:hover {
-        color: blue; /*鼠标悬停时的链接颜色*/
-      }
-      a:active {
-        color: aqua; /*点击时的链接颜色*/
-      }
-      a:visited {
-        color: black; /*已访问过的链接颜色*/
-      }
-      /*功能块字体*/
-      .ZiTi {
+      .heZi {
+        width: 600px;
+        margin: 0 auto;
         font-size: 30px;
-        font-family: "楷体", "KaiTi", "STKaiti", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      @media (max-width: 600px) {
-        .zuoCe {
-          display: none;
-        }
-        .zhuTi {
-          display: block;
-        }
-        .youCe {
-          flex-direction: column;
+      .neiRong {
+        width: 600px;
+        margin: 0 auto;
+      }
+      #hiddenContent {
+        display: none;
+      }
+      @media (max-width: 650px) {
+        .juZhong {
+          align-items: center;
         }
       }
     </style>
   </head>
-  <body class="flex">
-    <!--背景设置-->
-    <video autoplay muted loop class="video-background">
-      <source src="beiJing.mp4" type="video/mp4" />
-      您的浏览器不支持视频背景。
-    </video>
-    <!--左侧-->
-    <div style="width: 15vw" class="yinYing lanSe mg5 wenBen zuoCe">
-      <!--头像栏-->
-      <div
-        style="padding: 10px; align-items: center; justify-content: center"
-        class="mgl5 kaiTi"
-      >
-        <img src="buYu.jpg" alt="logo" class="responsive" />
-        <div style="margin-left: 10px">不语</div>
+  <body>
+    <video autoplay muted loop src="beiJing.mp4"></video>
+    <header class="juZhong">
+      <img src="buYu.jpg" alt="logo" class="touXiang" />
+      <p>不语</p>
+      <button type="button" id="toggleButton" class="anNiu">进入</button>
+    </header>
+    <article id="hiddenContent" >
+      <div style="margin-bottom: 50px">
+        <h class="heZi">简介</h>
+        <p class="neiRong">待补充......</p>
       </div>
-      <!--消息栏-->
-      <div class="flex1">
-        <div style="height: 50px" class="baiSe mgt5 yinYing">签名</div>
-        <div style="height: 50px" class="baiSe mgt5 yinYing">我的图片</div>
-        <div style="height: 50px" class="baiSe mgt5 yinYing">个人资料</div>
-        <div style="height: 50px" class="baiSe mgt5 yinYing">消息</div>
+      <div style="margin-bottom: 50px">
+        <h class="heZi">资料</h>
+        <p class="neiRong">待补充......</p>
       </div>
-    </div>
-    <!--显示区域-->
-    <div class="display-area wenBen zhuTi">
-      <!--顶栏-->
-      <div
-        style="width: 72vw; height: 50px"
-        class="lanSe mgt5 mgr5 mgl5 yinYing"
-      ></div>
-      <!--显示屏-->
-      <div class="baiSe mg5 flex1"></div>
-    </div>
-    <!--右侧-->
-    <div style="flex: 1" class="flex column mg5 lanSe wenBen zhuTi">
-      <!--功能块-->
-      <div class="flex youCe">
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/zishu/?_app=onebox"
-            class="ZiTi no-underline"
-            >子</a
-          >
-        </div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/chouniu/?_app=onebox"
-            class="ZiTi no-underline"
-            >丑</a
-          >
-        </div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/yinhu/?_app=onebox"
-            class="ZiTi no-underline"
-            >寅</a
-          >
-        </div>
+      <div style="margin-bottom: 10px">
+        <h class="heZi">图片</h>
+        <p class="neiRong">待补充......</p>
       </div>
-      <div class="flex youCe">
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/maotu/?_app=onebox"
-            class="ZiTi no-underline"
-            >卯</a
-          >
-        </div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/chenlong/?_app=onebox"
-            class="ZiTi no-underline"
-            >辰</a
-          >
-        </div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/sishe/?_app=onebox"
-            class="ZiTi no-underline"
-            >巳</a
-          >
-        </div>
-      </div>
-      <div class="flex youCe">
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/wuma/?_app=onebox"
-            class="ZiTi no-underline"
-            >午</a
-          >
-        </div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/weiyang/?_app=onebox"
-            class="ZiTi no-underline"
-            >未</a
-          >
-        </div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/shenhou/?_app=onebox"
-            class="ZiTi no-underline"
-            >申</a
-          >
-        </div>
-      </div>
-      <div class="flex youCe">
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/youji/?_app=onebox"
-            class="ZiTi no-underline"
-            >酉</a
-          >
-        </div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/xugou/?_app=onebox"
-            class="ZiTi no-underline"
-            >戌</a
-          >
-        </div>
-        <div style="height: 40px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="https://www.xzw.com/shengxiao/haizhu/?_app=onebox"
-            class="ZiTi no-underline"
-            >亥</a
-          >
-        </div>
-      </div>
-    </div>
+    </article>
+    <script>
+      var toggleButton = document.getElementById("toggleButton");
+      var hiddenContent = document.getElementById("hiddenContent");
+
+      toggleButton.addEventListener("click", function () {
+        if (hiddenContent.style.display === "none") {
+          hiddenContent.style.display = "block";
+        } else {
+          hiddenContent.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>
