@@ -62,11 +62,10 @@
       }
       .heZi {
         width: 600px;
-        margin: 0 auto;
         font-size: 30px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
       }
       .neiRong {
         width: 600px;
@@ -79,6 +78,12 @@
         .juZhong {
           align-items: center;
         }
+        .xiaoHeZi {
+          width: auto;
+        }
+        .neiRongEr {
+          width: auto;
+        }
       }
     </style>
   </head>
@@ -89,18 +94,18 @@
       <p>不语</p>
       <button type="button" id="toggleButton" class="anNiu">进入</button>
     </header>
-    <article id="hiddenContent" >
+    <article style="text-align: center" id="hiddenContent">
       <div style="margin-bottom: 50px">
-        <h class="heZi">简介</h>
-        <p class="neiRong">待补充......</p>
+        <h class="heZi xiaoHeZi">简介</h>
+        <p class="neiRong neiRongEr">待补充......</p>
       </div>
       <div style="margin-bottom: 50px">
-        <h class="heZi">资料</h>
-        <p class="neiRong">待补充......</p>
+        <h class="heZi xiaoHeZi">资料</h>
+        <p class="neiRong neiRongEr">待补充......</p>
       </div>
       <div style="margin-bottom: 10px">
-        <h class="heZi">图片</h>
-        <p class="neiRong">待补充......</p>
+        <h class="heZi xiaoHeZi">图片</h>
+        <p class="neiRong neiRongEr">待补充......</p>
       </div>
     </article>
     <script>
