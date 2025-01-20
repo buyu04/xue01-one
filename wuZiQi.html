@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五子棋</title>
+    <style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(214, 151, 14);
+      }
+
+      #info {
+        height: 40px;
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+      }
+
+      #zhuoZi {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 540px;
+        height: 540px;
+        background-color: rgb(184, 152, 50);
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 1px -1px,
+          rgba(0, 0, 0, 0.4) 0px 1px 1px 0px, rgba(0, 0, 0, 0.3) 0px 1px 3px 0px;
+        overflow: hidden;
+      }
+
+      .qiPan {
+        position: relative;
+        flex-grow: 1;
+        margin: 0;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+      }
+
+      .qiZi {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+      .red{
+        background: red;
+        border: 1px solid red;
+        box-shadow: 0 0 3px #ccc, 0 2px 2px rgb(223, 20, 20) inset;
+      }
+      .black{
+        background: black;
+        border: 1px solid rgb(0, 0, 0);
+        box-shadow: 0 1px 3px #ccc, 1px 1px 2px rgb(15, 15, 15) inset;
+      }
+    </style>
+</head>
+<body>
+    <div id="info">黑棋先走</div>
+    <div id="zhuoZi">
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="0"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="1"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="2"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="3"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div><div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div><div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div><div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="4"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="5"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="6"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="7"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="0"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="1"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="2"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="3"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="4"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="5"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="6"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="7"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+      <div style="width: 60px; height: 60px" class="qiPan">
+        <div
+          class="qiZi"
+          column="8"
+          row="8"
+          style="width: 30px; height: 30px"
+        ></div>
+      </div>
+    </div>
+  <script src="wuZiQi.js">
+  </script>
+</body>
+</html>
