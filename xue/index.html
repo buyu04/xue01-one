@@ -71,9 +71,13 @@
             font-size: 25px;
         }
 
+        a{
+            text-decoration: none;
+            color: rgb(60, 129, 118);
+        }
         .next {
             background: #ffffff70;
-            color: rgb(0, 0, 0);
+            color: rgb(78, 39, 39);
             position: relative;
             height: 100%;
             width: 100%;
@@ -83,6 +87,27 @@
             align-items: center;
             z-index: 2;
         }
+
+        .background {
+            background-color: rgba(255, 239, 145, 0.37);
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+                rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+            ;
+        }
+
+        .jianBian {
+            font-size: 50px;
+            font-family: 'kaiTi';
+            background: linear-gradient(to right, rgb(255, 230, 0), rgb(255, 0, 0));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .hidden-content{
+            display: none;
+        }
     </style>
 </head>
 
@@ -91,9 +116,25 @@
         <div class="scrollable-content">
             <div class="center">
                 <img src="xue.jpg" class="touXiang">
-                <div class="kai size">雪</div>
+                <div class="kai size" >
+                     <a href="#" id="toggleLink">雪</a>
+                </div>
             </div>
-            <div class="next kai" style="font-size: 30px">新年快乐</div>
+            <div id="hiddenContent" class="next hidden-content">
+                <div style="width: 20vw; font-size: 20px;" class="kai">
+                    <div style=" flex: 1; text-align: center; " class="background ">主页<br>（这是你的次主页，可以在这里添加功能和导航以及图片等等)
+                    </div>
+                    <div style="height: 13px"></div>
+                    <div style=" height: auto; text-align: center;" class="background ">
+                        这是导航或者目录
+                    </div>
+                </div>
+                <div style="width: 10px"></div>
+                <div style="width: 70vw;height: 94vh; text-align: center; " class="background">
+                    <p class="jianBian" >新年快乐</p>
+                    <p style="color:rgb(255, 136, 0)">愿你在新的一年开心快乐，和和美美<br>愿友谊长存，幸福安康</p>
+                </div>
+            </div>
         </div>
     </div>
     <script>
@@ -101,10 +142,10 @@
             const snowflake = document.createElement('div');
             snowflake.classList.add('snowflake');
             snowflake.style.position = 'absolute';
-            snowflake.style.top = '-10px';
+            snowflake.style.top = '-20px';
             snowflake.style.left = Math.random() * 100 + '%';
             snowflake.style.opacity = Math.random();
-            snowflake.style.fontSize = Math.random() * 30 + 10 + 'px';
+            snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
             snowflake.textContent = '❄';
             document.getElementById('snowflake-container').appendChild(snowflake);
 
@@ -132,6 +173,17 @@
         }
 
         startSnowfall();
+
+
+        document.getElementById('toggleLink').addEventListener('click', function (event) {
+            event.preventDefault();
+            var content = document.getElementById('hiddenContent');
+            if (content.classList.contains('hidden-content')) {
+                content.classList.remove('hidden-content');
+            } else {
+                content.classList.add('hidden-content');
+            }
+        });
     </script>
 </body>
 
