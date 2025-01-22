@@ -26,36 +26,70 @@
             position: fixed;
             left: 0;
             top: 0;
+            z-index: -1;
         }
-        .center{
-        position: relative;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
+
+        .center {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            z-index: 2;
         }
+
         .touXiang {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        overflow: hidden;
-       }
-       .kai{
-        font-family: 'kaiTi';
-       }
-        .next{
-        background: #00000073;
-        color: #fff;
-        position: relative;
-        height: 100%;
-        width: 100%;
-        padding-top: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(218, 218, 218, 0.7);
+        }
+
+        .kai {
+            font-family: 'kaiTi';
+        }
+
+        a{
+            text-decoration: none;
+            color: aquamarine;
+        }
+        .next {
+            background: #00000073;
+            color: #fff;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .background {
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: rgba(131, 131, 131, 0.2) 0px 2px 1px -1px,
+                rgba(134, 134, 134, 0.14) 0px 1px 1px 0px, rgba(131, 131, 131, 0.12) 0px 1px 3px 0px;
+            ;
+        }
+
+        .jianBian {
+            font-size: 50px;
+            font-family: 'kaiTi';
+            background: linear-gradient(to right, rgb(255, 230, 0), rgb(255, 0, 0));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .hidden-content{
+            display: none;
         }
     </style>
 </head>
@@ -64,11 +98,37 @@
     <video preload="auto" autoplay muted loop src="jing.mp4"></video>
     <div class="center">
         <img src="wei.jpg" alt="logo" class="touXiang">
-        <div class="kai" style="font-size: 25px">瑞瑞糖</div>
+        <div class="kai" style="font-size: 25px">
+            <a href="#" id="toggleLink">瑞瑞糖</a>
+        </div>
     </div>
-    <div class="next kai" style="font-size: 30px">
-        新年快乐
+    <div id="hiddenContent" class="next hidden-content">
+        <div style="width: 20vw; font-size: 20px;" class="kai">
+            <div style=" flex: 1; text-align: center; " class="background ">主页<br>（这是你的次主页，可以在这里添加功能和导航以及图片等等)</div>
+            <div style="height: 13px"></div>
+            <div style=" height: auto; text-align: center;" class="background ">
+                这是导航或者目录
+            </div>
+        </div>
+        <div style="width: 10px"></div>
+        <div style="width: 70vw;height: 94vh; text-align: center;padding: 50px; " class="background">
+            <p class="jianBian">新年快乐</p>
+            <p style="color:rgb(255, 136, 0)">愿你在新的一年开心快乐，和和美美<br>愿友谊长存，幸福安康</p>
+        </div>
     </div>
+    <script>
+
+        document.getElementById('toggleLink').addEventListener('click', function (event) {
+            event.preventDefault();
+            var content = document.getElementById('hiddenContent');
+            if (content.classList.contains('hidden-content')) {
+                content.classList.remove('hidden-content');
+            } else {
+                content.classList.add('hidden-content');
+            }
+        });
+
+    </script>
 </body>
 
 </html>
