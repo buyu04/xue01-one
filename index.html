@@ -86,7 +86,7 @@
         margin: 0 auto;
         font-size: 25px;
         font-family: "kaiTi";
-        color: green;
+        color: rgb(142, 223, 255);
         text-decoration: none;
       }
 
@@ -130,20 +130,21 @@
         <h class="heZi xiaoHeZi">图片</h>
         <p class="neiRong neiRongEr">待补充......</p>
       </div>
-      <div style="margin-bottom: 10px">
+      <div style="margin-bottom: 50px">
         <h class="heZi xiaoHeZi">其他</h>
         <a class="neiRongEr" href="zhuYe.html">进入</a>
       </div>
-      <div>请输入你的名字:</div>
+      <div class="heZi xiaoHeZi">请选择:</div>
       <form onsubmit="redirectToPage(); return false;">
-        <input type="radio" id="answer1" name="answer" value="吕继伟" />
-        <label for="answer1">1</label><br />
-        <input type="radio" id="answer2" name="answer" value="陈雪" />
-        <label for="answer2">2</label><br />
-        <input type="submit" value="Submit" />
+        <input type="radio" id="answer1" name="answer" value="吕继伟" style="margin: 10px" />
+        <label for="answer1" style="font-size: 30px">维</label><br />
+        <input type="radio" id="answer2" name="answer" value="陈雪" style="margin: 10px" />
+        <label for="answer2" style="font-size: 30px">雪</label><br />
+        <input type="submit" value="Submit"  style="background-color: aqua; padding: 10px;"/>
       </form>
     </article>
     <script>
+      
       let toggleButton = document.getElementById("toggleButton");
       let hiddenContent = document.getElementById("hiddenContent");
 
