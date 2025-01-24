@@ -56,6 +56,7 @@
         a{
             text-decoration: none;
             color: aquamarine;
+            font-size: 25px
         }
         .next {
             background: #00000073;
@@ -91,6 +92,24 @@
         .hidden-content{
             display: none;
         }
+        @media (max-width: 450px) {
+            .touXiang{
+                width: 150px;
+                height: 150px;
+            }
+            a{
+                font-size: 35px;
+            }
+        }
+        @media screen and (min-width:450px) and (max-width:1000px) {
+            .touXiang{
+                width: 300px;
+                height: 300px;
+            }
+            a{
+                font-size: 45px;
+            }
+        }
     </style>
 </head>
 
@@ -98,7 +117,7 @@
     <video preload="auto" autoplay muted loop src="jing.mp4"></video>
     <div class="center">
         <img src="wei.jpg" alt="logo" class="touXiang">
-        <div class="kai" style="font-size: 25px">
+        <div class="kai">
             <a href="#" id="toggleLink">瑞瑞糖</a>
         </div>
     </div>
