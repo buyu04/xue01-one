@@ -66,14 +66,12 @@
             font-family: 'kaiTi';
         }
 
-        .size {
-            margin-top: 5px;
-            font-size: 25px;
-        }
 
         a{
             text-decoration: none;
-            color: rgb(60, 129, 118);
+            color: rgb(255, 142, 204);
+            margin-top: 5px;
+            font-size: 25px;
         }
         .next {
             background: #ffffff70;
@@ -108,6 +106,24 @@
         .hidden-content{
             display: none;
         }
+        @media (max-width: 450px) {
+            .touXiang{
+                width: 150px;
+                height: 150px;
+            }
+            a{
+                font-size: 35px;
+            }
+        }
+        @media screen and (min-width:450px) and (max-width:1000px) {
+            .touXiang{
+                width: 300px;
+                height: 300px;
+            }
+            a{
+                font-size: 45px;
+            }
+        }
     </style>
 </head>
 
@@ -116,7 +132,7 @@
         <div class="scrollable-content">
             <div class="center">
                 <img src="xue.jpg" class="touXiang">
-                <div class="kai size" >
+                <div class="kai " >
                      <a href="#" id="toggleLink">雪</a>
                 </div>
             </div>
