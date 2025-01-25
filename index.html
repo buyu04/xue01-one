@@ -1,174 +1,172 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main Page</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
 
-      html,
-      body {
-        height: 100%;
-        width: 100%;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main Page</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-      video {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        position: fixed;
-        left: 0;
-        top: 0;
-      }
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
 
-      header {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    header {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .touXiang {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    header p {
+      font-size: 30px;
+      color: rgb(0, 0, 0);
+      font-family: "楷体", "KaiTi", "STKaiti", sans-serif;
+    }
+
+    .anNiu {
+      width: 100px;
+      height: 40px;
+      font-size: 20px;
+      background-color: rgb(36, 36, 133);
+    }
+
+    article {
+      background: #00000073;
+      color: #fff;
+      position: relative;
+      height: 100%;
+      width: 100%;
+      padding-top: 50px;
+      display: flex;
+    }
+
+    .heZi {
+      width: 600px;
+      font-size: 30px;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+    }
+
+    .neiRong {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    a {
+      width: 600px;
+      margin: 0 auto;
+      font-size: 25px;
+      font-family: "kaiTi";
+      color: rgb(142, 223, 255);
+      text-decoration: none;
+    }
+
+    #hiddenContent {
+      display: none;
+    }
+
+    @media (max-width: 650px) {
+      .juZhong {
         align-items: center;
-        color: #fff;
       }
 
-      .touXiang {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        overflow: hidden;
+      .xiaoHeZi {
+        width: auto;
       }
 
-      header p {
-        font-size: 30px;
-        color: rgb(0, 0, 0);
-        font-family: "楷体", "KaiTi", "STKaiti", sans-serif;
+      .neiRongEr {
+        width: auto;
       }
+    }
+  </style>
+</head>
 
-      .anNiu {
-        width: 100px;
-        height: 40px;
-        font-size: 20px;
-        background-color: rgb(36, 36, 133);
+<body>
+  <video preload="auto" autoplay muted loop src="beiJing.mp4"></video>
+  <header class="juZhong">
+    <img src="buYu.jpg" alt="logo" class="touXiang" />
+    <p>不语</p>
+    <button type="button" id="toggleButton" class="anNiu">进入</button>
+  </header>
+  <article style="text-align: center" id="hiddenContent">
+    <div style="margin-bottom: 50px">
+      <h class="heZi xiaoHeZi">简介</h>
+      <p class="neiRong neiRongEr">待补充......</p>
+    </div>
+    <div style="margin-bottom: 50px">
+      <h class="heZi xiaoHeZi">资料</h>
+      <p class="neiRong neiRongEr">待补充......</p>
+    </div>
+    <div style="margin-bottom: 50px">
+      <h class="heZi xiaoHeZi">图片</h>
+      <p class="neiRong neiRongEr">待补充......</p>
+    </div>
+    <div style="margin-bottom: 30px">
+      <h class="heZi xiaoHeZi">其他</h>
+      <a class="neiRongEr" href="zhuYe.html">进入</a>
+    </div>
+    <div class="heZi xiaoHeZi">请选择:</div>
+
+    <input type="text" id="inputBox" placeholder="请输入你的名字">
+    <button type="submit" onclick="redirectToPage()">提交</button>
+
+  </article>
+  <script>
+
+    let toggleButton = document.getElementById("toggleButton");
+    let hiddenContent = document.getElementById("hiddenContent");
+
+    toggleButton.addEventListener("click", function () {
+      if (hiddenContent.style.display === "none") {
+        hiddenContent.style.display = "block";
+      } else {
+        hiddenContent.style.display = "none";
       }
+    });
 
-      article {
-        background: #00000073;
-        color: #fff;
-        position: relative;
-        height: 100%;
-        width: 100%;
-        padding-top: 50px;
-        display: flex;
+    function redirectToPage() {
+      let inputText = document.getElementById('inputBox').value;
+      if (inputText === '瑞瑞糖') {
+        window.location.href = 'https://buyu04.github.io/xue01-one/wei/index.html';
       }
-
-      .heZi {
-        width: 600px;
-        font-size: 30px;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
+      else if (inputText === '雪') {
+        window.location.href = 'https://buyu04.github.io/xue01-one/xue/index.html';
       }
-
-      .neiRong {
-        width: 600px;
-        margin: 0 auto;
+      else {
+        alert('暂时还没有你的网页哦')
       }
+    }
+  </script>
+</body>
 
-      a {
-        width: 600px;
-        margin: 0 auto;
-        font-size: 25px;
-        font-family: "kaiTi";
-        color: rgb(142, 223, 255);
-        text-decoration: none;
-      }
-
-      #hiddenContent {
-        display: none;
-      }
-
-      @media (max-width: 650px) {
-        .juZhong {
-          align-items: center;
-        }
-
-        .xiaoHeZi {
-          width: auto;
-        }
-
-        .neiRongEr {
-          width: auto;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <video preload="auto" autoplay muted loop src="beiJing.mp4"></video>
-    <header class="juZhong">
-      <img src="buYu.jpg" alt="logo" class="touXiang" />
-      <p>不语</p>
-      <button type="button" id="toggleButton" class="anNiu">进入</button>
-    </header>
-    <article style="text-align: center" id="hiddenContent">
-      <div style="margin-bottom: 50px">
-        <h class="heZi xiaoHeZi">简介</h>
-        <p class="neiRong neiRongEr">待补充......</p>
-      </div>
-      <div style="margin-bottom: 50px">
-        <h class="heZi xiaoHeZi">资料</h>
-        <p class="neiRong neiRongEr">待补充......</p>
-      </div>
-      <div style="margin-bottom: 50px">
-        <h class="heZi xiaoHeZi">图片</h>
-        <p class="neiRong neiRongEr">待补充......</p>
-      </div>
-      <div style="margin-bottom: 30px">
-        <h class="heZi xiaoHeZi">其他</h>
-        <a class="neiRongEr" href="zhuYe.html">进入</a>
-      </div>
-      <div class="heZi xiaoHeZi">请选择:</div>
-      <form onsubmit="redirectToPage(); return false;">
-        <input type="radio" id="answer1" name="answer" value="吕继伟" style="margin: 10px" />
-        <label for="answer1" style="font-size: 30px">维</label><br />
-        <input type="radio" id="answer2" name="answer" value="陈雪" style="margin: 10px" />
-        <label for="answer2" style="font-size: 30px">雪</label><br />
-        <input type="submit" value="Submit"  style="background-color: aqua; padding: 10px;"/>
-      </form>
-    </article>
-    <script>
-      
-      let toggleButton = document.getElementById("toggleButton");
-      let hiddenContent = document.getElementById("hiddenContent");
-
-      toggleButton.addEventListener("click", function () {
-        if (hiddenContent.style.display === "none") {
-          hiddenContent.style.display = "block";
-        } else {
-          hiddenContent.style.display = "none";
-        }
-      });
-      function redirectToPage() {
-        var radios = document.getElementsByName("answer");
-        for (var i = 0, length = radios.length; i < length; i++) {
-          if (radios[i].checked) {
-            // 根据选中的单选按钮的值，跳转到对应的网页
-            if (radios[i].value === "吕继伟") {
-              window.location.href = "/xue01-one/wei/index.html";
-            } else if (radios[i].value === "陈雪") {
-              window.location.href = "/xue01-one/xue/index.html";
-            }
-            break;
-          }
-        }
-      }
-    </script>
-  </body>
 </html>
