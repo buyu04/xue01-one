@@ -1,238 +1,236 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>主页</title>
-    <style>
-      body,
-      html {
-        height: 100%;
-        margin: 0;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>主页</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex1 {
+      flex: 1;
+    }
+
+    .column {
+      flex-direction: column;
+    }
+
+    .mg5 {
+      margin: 5px;
+    }
+
+    .mgt5 {
+      margin-top: 5px;
+    }
+
+    .mgr5 {
+      margin-right: 5px;
+    }
+
+    .mgl5 {
+      margin-left: 5px;
+    }
+
+    .lanSe {
+      background-color: rgba(156, 156, 255, 0.89);
+    }
+
+    .baiSe {
+      background-color: rgba(224, 222, 222, 0.842);
+    }
+
+    .yinYing {
+      box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    }
+
+    .background {
+      background-color: rgba(149, 231, 217, 0.562);
+    }
+
+    /*字体*/
+    .kaiTi {
+      padding: 10px 20px;
+      border-bottom: 1px solid grey;
+      font-size: 30px;
+      color: rgb(0, 0, 0);
+      font-family: "KaiTi";
+    }
+
+    .xiaoXi {
+      padding: 10px 20px;
+      border-bottom: 1px solid grey;
+      font-size: 20px;
+      color: #666;
+    }
+
+    .responsive {
+      width: 5vw;
+      height: auto;
+    }
+
+    .gongNengQu {
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /*显示区域顶栏和显示屏水平排列*/
+    .display-area {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /*功能块链接设置*/
+    /*去除下划线*/
+    a.no-underline {
+      text-decoration: none;
+    }
+
+    /*设置链接默认颜色*/
+    a:link {
+      color: black;
+      /*未访问的链接颜色*/
+    }
+
+    a:hover {
+      color: blue;
+      /*鼠标悬停时的链接颜色*/
+    }
+
+    a:active {
+      color: aqua;
+      /*点击时的链接颜色*/
+    }
+
+    a:visited {
+      color: black;
+      /*已访问过的链接颜色*/
+    }
+
+    /*功能块字体*/
+    .ZiTi {
+      font-size: 30px;
+      font-family: "楷体";
+    }
+
+    @media (max-width: 600px) {
+      .zuoCe {
+        display: none;
       }
-      .flex {
-        display: flex;
+
+      .zhuTi {
+        display: block;
       }
-      .flex1 {
-        flex: 1;
-      }
-      .column {
+
+      .youCe {
         flex-direction: column;
       }
-      .mg5 {
-        margin: 5px;
-      }
-      .mgt5 {
-        margin-top: 5px;
-      }
-      .mgr5 {
-        margin-right: 5px;
-      }
-      .mgl5 {
-        margin-left: 5px;
-      }
-      .lanSe {
-        background-color: rgb(156, 156, 255);
-      }
-      .baiSe {
-        background-color: rgb(224, 222, 222); 
-      }
-      .yinYing {
-        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-      }
-      /*字体*/
-      .kaiTi {
-        padding: 10px 20px;
-        border-bottom: 1px solid grey;
-        font-size: 30px;
-        color: rgb(0, 0, 0);
-        font-family:  "KaiTi";
-      }
-      .xiaoXi {
-        padding: 10px 20px;
-        border-bottom: 1px solid grey;
-        font-size: 20px;
-        color: #666;
-      }
-      .responsive {
-        width: 5vw;
-        height: auto;
-      }
-      .gongNengQu {
-        width: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      /*显示区域顶栏和显示屏水平排列*/
-      .display-area {
-        display: flex;
-        flex-direction: column;
-      }
-      /*功能块链接设置*/
-      /*去除下划线*/
-      a.no-underline {
-        text-decoration: none;
-      }
-      /*设置链接默认颜色*/
-      a:link {
-        color: black; /*未访问的链接颜色*/
-      }
-      a:hover {
-        color: blue; /*鼠标悬停时的链接颜色*/
-      }
-      a:active {
-        color: aqua; /*点击时的链接颜色*/
-      }
-      a:visited {
-        color: black; /*已访问过的链接颜色*/
-      }
-      /*功能块字体*/
-      .ZiTi {
-        font-size: 30px;
-        font-family: "楷体";
-      }
-      @media (max-width: 600px) {
-        .zuoCe {
-          display: none;
-        }
-        .zhuTi {
-          display: block;
-        }
-        .youCe {
-          flex-direction: column;
-        }
-      }
-    </style>
-  </head>
-  <body class="flex">
-    <!--左侧-->
-    <div style="width: 15vw" class="yinYing lanSe mg5 wenBen zuoCe">
-      <!--头像栏-->
-      <div
-        style="padding: 10px; align-items: center; justify-content: center"
-        class="mgl5 kaiTi"
-      >
-        <img src="buYu.jpg" alt="logo" class="responsive" />
-        <div style="margin-left: 10px">不语</div>
+    }
+  </style>
+</head>
+
+<body class="flex background">
+  <!--左侧-->
+  <div style="width: 15vw" class="yinYing lanSe mg5 wenBen zuoCe">
+    <!--头像栏-->
+    <div style="padding: 10px; align-items: center; justify-content: center" class="mgl5 kaiTi">
+      <img src="buYu.jpg" alt="logo" class="responsive" />
+      <div style="margin-left: 10px">不语</div>
+    </div>
+    <!--消息栏-->
+    <div class="flex1">
+      <div style="height: 50px;" class="baiSe mgt5 yinYing">
+        <div style="text-align: center;">签名:</div>
+        <div style="font-size: 20rpx;font-family: 'kaiTi';text-align: center;">趁着风华赶着月茂</div>
       </div>
-      <!--消息栏-->
-      <div class="flex1">
-        <div style="height: 50px" class="baiSe mgt5 yinYing">签名</div>
-        <div style="height: 50px" class="baiSe mgt5 yinYing">我的图片</div>
-        <div style="height: 50px" class="baiSe mgt5 yinYing">个人资料</div>
-        <div style="height: 50px" class="baiSe mgt5 yinYing">消息</div>
+      <div style="height: 50px;text-align: center;" class="baiSe mgt5 yinYing"><a href="#" class="no-underline  clickable"
+        >我的图片>></a></div>
+      <div style="height: 50px;text-align: center;" class="baiSe mgt5 yinYing"><a href="#" class="no-underline  clickable"
+        >个人资料>></a></div>
+      <div style="height: 50px;text-align: center;" class="baiSe mgt5 yinYing"><a href="#" class="no-underline  clickable"
+        >消息>></a></div>
+    </div>
+  </div>
+  <!--显示区域-->
+  <div class="display-area wenBen zhuTi">
+    <!--顶栏-->
+    <div style="width: 100%; height: 50px;" class="lanSe mgt5 mgr5 yinYing"></div>
+    <!--显示屏-->
+    <div class="baiSe mg5 flex1">
+      <img src="宫阙.jpg" alt="图片" style="height:100%;width: 100%;">
+    </div>
+  </div>
+  <!--右侧-->
+  <div style="flex: 1" class="flex column mg5 lanSe wenBen zhuTi">
+    <!--功能块-->
+    <div class="flex youCe">
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="wuZiQi.html" class="ZiTi no-underline">子</a>
+      </div>
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">丑</a>
+      </div>
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">寅</a>
       </div>
     </div>
-    <!--显示区域-->
-    <div class="display-area wenBen zhuTi">
-      <!--顶栏-->
-      <div
-        style="width: 72vw; height: 50px"
-        class="lanSe mgt5 mgr5 mgl5 yinYing"
-      ></div>
-      <!--显示屏-->
-      <div class="baiSe mg5 flex1">
-        <p style="text-align: center; font-size: 40px;">待更新......</p>
+    <div class="flex youCe">
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">卯</a>
+      </div>
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">辰</a>
+      </div>
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">巳</a>
       </div>
     </div>
-    <!--右侧-->
-    <div style="flex: 1" class="flex column mg5 lanSe wenBen zhuTi">
-      <!--功能块-->
-      <div class="flex youCe">
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href="wuZiQi.html"
-            class="ZiTi no-underline"
-            >子</a
-          >
-        </div>
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >丑</a
-          >
-        </div>
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >寅</a
-          >
-        </div>
+    <div class="flex youCe">
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">午</a>
       </div>
-      <div class="flex youCe">
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >卯</a
-          >
-        </div>
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >辰</a
-          >
-        </div>
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >巳</a
-          >
-        </div>
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">未</a>
       </div>
-      <div class="flex youCe">
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >午</a
-          >
-        </div>
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >未</a
-          >
-        </div>
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >申</a
-          >
-        </div>
-      </div>
-      <div class="flex youCe">
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >酉</a
-          >
-        </div>
-        <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >戌</a
-          >
-        </div>
-        <div style="height: 36px;" class="gongNengQu baiSe yinYing mg5">
-          <a
-            href=""
-            class="ZiTi no-underline"
-            >亥</a
-          >
-        </div>
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">申</a>
       </div>
     </div>
-  </body>
+    <div class="flex youCe">
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">酉</a>
+      </div>
+      <div style="height: 36px" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">戌</a>
+      </div>
+      <div style="height: 36px;" class="gongNengQu baiSe yinYing mg5">
+        <a href="#" class="ZiTi no-underline clickable">亥</a>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+      const clickableElements = document.querySelectorAll('.clickable');
+      clickableElements.forEach(function (element) {
+        element.addEventListener('click', function (e) {
+          e.preventDefault();
+          alert('更新中...');
+        });
+      });
+    });
+</script>
+
 </html>
